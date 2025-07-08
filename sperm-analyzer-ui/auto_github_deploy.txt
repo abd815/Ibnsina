@@ -1,0 +1,123 @@
+#!/bin/bash
+
+# 🚀 سكريبت الرفع التلقائي لـ GitHub - Sperm Analyzer AI
+# Automatic GitHub Deployment Script - Sperm Analyzer AI
+
+echo "🚀 بدء عملية الرفع التلقائي على GitHub..."
+echo "======================================================"
+
+# التحقق من وجود git
+if ! command -v git &> /dev/null; then
+    echo "❌ خطأ: Git غير مثبت. يرجى تثبيت Git أولاً."
+    echo "تحميل من: https://git-scm.com/downloads"
+    exit 1
+fi
+
+# طلب معلومات GitHub
+echo "📝 يرجى إدخال معلومات GitHub الخاصة بك:"
+read -p "اسم المستخدم على GitHub: " GITHUB_USERNAME
+read -p "اسم المستودع (اتركه فارغاً للافتراضي 'sperm-analyzer-ai'): " REPO_NAME
+
+# تعيين اسم المستودع الافتراضي
+if [ -z "$REPO_NAME" ]; then
+    REPO_NAME="sperm-analyzer-ai"
+fi
+
+# التحقق من وجود المجلد
+if [ ! -d "sperm-analyzer-ui" ]; then
+    echo "❌ خطأ: مجلد 'sperm-analyzer-ui' غير موجود."
+    echo "يرجى التأكد من تنفيذ هذا السكريبت في المجلد الذي يحتوي على المشروع."
+    exit 1
+fi
+
+echo ""
+echo "📂 الانتقال إلى مجلد المشروع..."
+cd sperm-analyzer-ui
+
+# تهيئة Git repository
+echo "🔧 تهيئة مستودع Git محلي..."
+git init
+
+# إضافة معلومات Git (اختياري)
+echo "👤 تكوين معلومات Git..."
+git config user.name "$GITHUB_USERNAME"
+read -p "البريد الإلكتروني لـ Git: " GIT_EMAIL
+git config user.email "$GIT_EMAIL"
+
+# إضافة جميع الملفات
+echo "📁 إضافة جميع ملفات المشروع..."
+git add .
+
+# إنشاء first commit
+echo "💾 إنشاء commit أولي..."
+git commit -m "Initial commit: Sperm Analyzer AI Android App
+
+🎯 Features:
+- Complete bilingual UI (Arabic/English) with RTL support
+- 4 fully functional screens (Main, Analysis, Results, Settings)
+- Material Design 3 with medical-grade aesthetic
+- Ready for Koyb.com backend integration
+- GitHub Actions for automatic APK building
+
+🏥 Medical Features:
+- Professional clinical design
+- Sperm analysis results display
+- Export functionality (PDF/CSV)
+- Configurable backend URL
+
+🔧 Technical:
+- Jetpack Compose + Kotlin
+- Mock data for testing
+- Responsive design (360x800)
+- Android SDK 23+ support"
+
+# ربط المستودع بـ GitHub
+GITHUB_REPO_URL="https://github.com/$GITHUB_USERNAME/$REPO_NAME.git"
+echo "🔗 ربط المستودع بـ GitHub: $GITHUB_REPO_URL"
+git remote add origin $GITHUB_REPO_URL
+
+# عرض التعليمات النهائية
+echo ""
+echo "✅ تم إعداد المشروع بنجاح!"
+echo ""
+echo "🔶 الخطوات التالية (يدوية):"
+echo "1. انتقل إلى GitHub.com وسجل الدخول"
+echo "2. أنشئ مستودع جديد باسم: $REPO_NAME"
+echo "3. اجعل المستودع عام (Public) أو خاص (Private)"
+echo "4. لا تضع ملفات README أو .gitignore (موجودة بالفعل)"
+echo "5. بعد إنشاء المستودع، نفذ الأمر التالي:"
+echo ""
+echo "   git push -u origin main"
+echo ""
+echo "🤖 GitHub Actions سيبدأ تلقائياً ببناء APK فور رفع الكود!"
+echo ""
+echo "📱 ستجد ملفات APK في:"
+echo "   • GitHub → Actions → أحدث workflow → Artifacts"
+echo "   • أو في Releases إذا كان push للـ main branch"
+echo ""
+
+# إنشاء سكريبت push منفصل
+cat > push_to_github.sh << 'EOF'
+#!/bin/bash
+echo "🚀 رفع المشروع إلى GitHub..."
+git push -u origin main
+
+if [ $? -eq 0 ]; then
+    echo "✅ تم رفع المشروع بنجاح!"
+    echo "🔗 انتقل إلى مستودع GitHub لمراقبة بناء APK"
+    echo "⏰ سيستغرق البناء 5-10 دقائق تقريباً"
+else
+    echo "❌ فشل في رفع المشروع"
+    echo "💡 تأكد من إنشاء المستودع على GitHub أولاً"
+fi
+EOF
+
+chmod +x push_to_github.sh
+
+echo "📜 تم إنشاء سكريبت 'push_to_github.sh' لرفع الكود"
+echo ""
+echo "🏁 لإكمال العملية:"
+echo "1. أنشئ المستودع على GitHub"
+echo "2. نفذ: ./push_to_github.sh"
+echo ""
+echo "🎉 ستحصل على APK تلقائياً بعد 5-10 دقائق!"
