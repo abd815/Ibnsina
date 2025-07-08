@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Sperm Analyzer AI - Build Script
+# This script builds the Android APK for the Sperm Analyzer AI app
+
+echo "🏗️  Building Sperm Analyzer AI APK..."
+echo "======================================"
+
+# Check if gradlew exists
+if [ ! -f "./gradlew" ]; then
+    echo "❌ Error: gradlew not found. Please run this script from the project root directory."
+    exit 1
+fi
+
+# Make gradlew executable
+chmod +x ./gradlew
+
+# Clean previous builds
+echo "🧹 Cleaning previous builds..."
+./gradlew clean
+
+# Build debug APK
+echo "🔨 Building debug APK..."
+./gradlew assembleDebug
+
+# Check if debug build was successful
+if [ $? -eq 0 ]; then
+    echo "✅ Debug APK built successfully!"
+    echo "📱 Location: app/build/outputs/apk/debug/app-debug.apk"
+else
+    echo "❌ Debug build failed!"
+    exit 1
+fi
+
+# Build release APK
+echo "🔨 Building release APK..."
+./gradlew assembleRelease
+
+# Check if release build was successful
+if [ $? -eq 0 ]; then
+    echo "✅ Release APK built successfully!"
+    echo "📱 Location: app/build/outputs/apk/release/app-release-unsigned.apk"
+    
+    # Create a releases directory
+    mkdir -p releases
+    
+    # Copy APKs to releases directory with timestamp
+    TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+    cp app/build/outputs/apk/debug/app-debug.apk releases/sperm-analyzer-debug-${TIMESTAMP}.apk
+    cp app/build/outputs/apk/release/app-release-unsigned.apk releases/sperm-analyzer-release-${TIMESTAMP}.apk
+    
+    echo "📂 APKs copied to releases/ directory with timestamp"
+else
+    echo "❌ Release build failed!"
+fi
+
+echo ""
+echo "🎉 Build process completed!"
+echo ""
+echo "📋 Summary:"
+echo "- Debug APK: app/build/outputs/apk/debug/app-debug.apk"
+echo "- Release APK: app/build/outputs/apk/release/app-release-unsigned.apk"
+echo "- Timestamped copies in: releases/"
+echo ""
+echo "💡 Next steps:"
+echo "1. Test the debug APK on your device"
+echo "2. Sign the release APK for production"
+echo "3. Upload to GitHub releases or distribute as needed"

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude sensitive data -->
+    <exclude domain="sharedpref" path="sensitive_prefs.xml" />
+    <exclude domain="database" path="analysis_cache.db" />
+    
+    <!-- Include important user data -->
+    <include domain="file" path="analysis_logs/" />
+    <include domain="sharedpref" path="app_settings.xml" />
+</full-backup-content>

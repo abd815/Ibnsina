@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Sperm Analyzer AI</string>
+    
+    <!-- Main Screen -->
+    <string name="welcome_title">Welcome to Sperm Analyzer AI</string>
+    <string name="welcome_subtitle">Advanced AI-powered sperm analysis for medical professionals</string>
+    <string name="drag_drop_hint">Drag &amp; drop your video or image file here</string>
+    <string name="upload_file">Upload File</string>
+    <string name="camera_capture">Camera</string>
+    <string name="start_analysis">Start Analysis</string>
+    <string name="no_file_selected">No file selected</string>
+    <string name="file_preview">File Preview</string>
+    
+    <!-- Analysis Screen -->
+    <string name="analyzing_title">Analyzing Sample</string>
+    <string name="analyzing_subtitle">AI is processing your sample...</string>
+    <string name="estimated_time">Estimated time remaining:</string>
+    <string name="cancel_analysis">Cancel Analysis</string>
+    <string name="processing_status">Processing...</string>
+    
+    <!-- Results Screen -->
+    <string name="analysis_results">Analysis Results</string>
+    <string name="total_count">Total Sperm Count</string>
+    <string name="mobility_score">Motility Score</string>
+    <string name="density_value">Density</string>
+    <string name="export_pdf">Export PDF</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="return_home">Return to Home</string>
+    <string name="excellent">Excellent</string>
+    <string name="good">Good</string>
+    <string name="moderate">Moderate</string>
+    <string name="low">Low</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings">Settings</string>
+    <string name="language_setting">Language</string>
+    <string name="theme_setting">Theme</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="backend_url">Backend URL</string>
+    <string name="backend_url_hint">https://api.koyb.com</string>
+    <string name="save_logs">Save Analysis Logs</string>
+    <string name="save_logs_subtitle">Store analysis results locally</string>
+    <string name="about_app">About App</string>
+    <string name="version">Version</string>
+    
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    
+    <!-- Units and measurements -->
+    <string name="million_per_ml">million/mL</string>
+    <string name="percentage">%</string>
+    <string name="seconds_short">s</string>
+    <string name="minutes_short">min</string>
+    
+    <!-- File types -->
+    <string name="video_file">Video File</string>
+    <string name="image_file">Image File</string>
+    <string name="supported_formats">Supported formats: MP4, AVI, JPG, PNG</string>
+</resources>

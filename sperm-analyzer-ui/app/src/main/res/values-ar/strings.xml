@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">محلل الحيوانات المنوية بالذكاء الاصطناعي</string>
+    
+    <!-- Main Screen -->
+    <string name="welcome_title">مرحباً بك في محلل الحيوانات المنوية</string>
+    <string name="welcome_subtitle">تحليل متطور للحيوانات المنوية بالذكاء الاصطناعي للمهنيين الطبيين</string>
+    <string name="drag_drop_hint">اسحب وأفلت ملف الفيديو أو الصورة هنا</string>
+    <string name="upload_file">رفع ملف</string>
+    <string name="camera_capture">الكاميرا</string>
+    <string name="start_analysis">بدء التحليل</string>
+    <string name="no_file_selected">لم يتم اختيار ملف</string>
+    <string name="file_preview">معاينة الملف</string>
+    
+    <!-- Analysis Screen -->
+    <string name="analyzing_title">تحليل العينة</string>
+    <string name="analyzing_subtitle">الذكاء الاصطناعي يعالج العينة...</string>
+    <string name="estimated_time">الوقت المتبقي المقدر:</string>
+    <string name="cancel_analysis">إلغاء التحليل</string>
+    <string name="processing_status">جاري المعالجة...</string>
+    
+    <!-- Results Screen -->
+    <string name="analysis_results">نتائج التحليل</string>
+    <string name="total_count">العدد الإجمالي للحيوانات المنوية</string>
+    <string name="mobility_score">درجة الحركة</string>
+    <string name="density_value">الكثافة</string>
+    <string name="export_pdf">تصدير PDF</string>
+    <string name="export_csv">تصدير CSV</string>
+    <string name="return_home">العودة للرئيسية</string>
+    <string name="excellent">ممتاز</string>
+    <string name="good">جيد</string>
+    <string name="moderate">متوسط</string>
+    <string name="low">منخفض</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings">الإعدادات</string>
+    <string name="language_setting">اللغة</string>
+    <string name="theme_setting">المظهر</string>
+    <string name="dark_mode">الوضع المظلم</string>
+    <string name="light_mode">الوضع المضيء</string>
+    <string name="backend_url">رابط الخادم</string>
+    <string name="backend_url_hint">https://api.koyb.com</string>
+    <string name="save_logs">حفظ سجلات التحليل</string>
+    <string name="save_logs_subtitle">تخزين نتائج التحليل محلياً</string>
+    <string name="about_app">حول التطبيق</string>
+    <string name="version">الإصدار</string>
+    
+    <!-- Common -->
+    <string name="back">رجوع</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="ok">موافق</string>
+    <string name="error">خطأ</string>
+    <string name="success">نجح</string>
+    
+    <!-- Units and measurements -->
+    <string name="million_per_ml">مليون/مل</string>
+    <string name="percentage">%</string>
+    <string name="seconds_short">ث</string>
+    <string name="minutes_short">د</string>
+    
+    <!-- File types -->
+    <string name="video_file">ملف فيديو</string>
+    <string name="image_file">ملف صورة</string>
+    <string name="supported_formats">الصيغ المدعومة: MP4, AVI, JPG, PNG</string>
+</resources>

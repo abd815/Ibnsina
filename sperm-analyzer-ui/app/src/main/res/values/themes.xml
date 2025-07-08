@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SpermAnalyzer" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/cyan_blue</item>
+        <item name="colorOnPrimary">@color/deep_navy_blue</item>
+        <item name="colorPrimaryContainer">@color/secondary_navy</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/cyan_blue</item>
+        <item name="colorOnSecondary">@color/deep_navy_blue</item>
+        <item name="colorSecondaryContainer">@color/surface_variant</item>
+        <item name="colorOnSecondaryContainer">@color/text_secondary</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/deep_navy_blue</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorSurface">@color/secondary_navy</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">@color/deep_navy_blue</item>
+        <item name="android:navigationBarColor">@color/secondary_navy</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Window attributes -->
+        <item name="android:windowBackground">@color/deep_navy_blue</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+    
+    <!-- Splash screen theme (if needed) -->
+    <style name="Theme.SpermAnalyzer.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/deep_navy_blue</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.SpermAnalyzer</item>
+    </style>
+</resources>
